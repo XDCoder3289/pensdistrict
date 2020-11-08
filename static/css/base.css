@@ -1,0 +1,42 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#nav-links {
+  color: #99a8b2;
+}
+
+#nav-links:hover {
+  text-decoration: none;
+  color: #f1f6f9;
+}
+
+#jumbotron {
+  background-color: white;
+  color: black;
+}
+
+
+.logo {
+  display: block;
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#heading-main {
+  font-family: 'Dancing Script', cursive;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #214252; /* old IE */
+    background-color: #214252; /* Modern Browsers */
+}
+
+#footer {
+  color: white;
+  font-size: 13px;
+}

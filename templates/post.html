@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+<html lang="en-us" dir="ltr">
+
+<head>
+</head>
+
+<body>
+  {% block body_block %}
+  <div class="container">
+
+    <!-- Header  -->
+    <header>
+      <h1 id="heading-main" class="display-3 text-center mb-1">{{post.post_name}}</h1>
+      <time class="d-block display-5 text-center mb-5" datetime="{{post.date}}">{{post.date}}</time>
+      <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="" style="width: 70%;">
+
+      <!-- Table of Contents #1c2b2d -->
+      <div class="card text-center mx-auto" style="width: 18rem;">
+        <div class="card-header text-center" style="background-color: #1c2b2d; color: white;">
+          Table of Contents
+        </div>
+        <ul class="list-group list-group-flush">
+          {% for pen in pens %}
+          <li class="list-group-item"> <a href="#pen-{{pen.pen_name}}" style="color:black;">{{pen.pen_name}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <br>
+
+    </header>
+
+    <!-- Line -->
+    <div class="container">
+      <hr>
+    </div>
+
+    <!-- Main Section -->
+    <main>
+      {% for pen in pens %}
+      <div class="container">
+        <div class="container mb-4">
+          <div class="container text-center">
+            <!-- Call to Action -->
+            <div class="card text-center mb-5 mt-5">
+              <div id="pen-{{pen.pen_name}}" class="card-body" style="background-color: #f1f6f9">
+                <h2 id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="{{pen.amazon_link}}" target="_blank" class="btn btn-outline-primary"><span><i class="fa fa-amazon"></i></span> Buy Now <br>USD {{pen.price}}</a>
+              </div>
+            </div>
+            <!-- Short Description -->
+            <p class="display-5 text-center">{{pen.short_description|safe}}</p>
+          </div>
+        </div>
+        <!-- main content -->
+        <img class="rounded mx-auto d-block mb-5" src="{{pen.pen_image.url}}" alt="" style="width: 50%">
+        <div class="container mb-5">
+          <div class="container">
+            <div class="container">
+              <p class="mb-5">{{pen.post|safe}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <br>
+  {% endfor %}
+  </div>
+  </main>
+
+  {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+<html lang="en-us" dir="ltr">
+{% block body_block %}
+<!-- Header -->
+
+<div class="container">
+  <div class="container">
+    <header>
+      <img class="logo" src="{% static 'images/logo.png' %}" alt="This is the image of the logo">
+      <h1 id="heading-main" class="display-4 text-center">Pens District</h1>
+      <p id="heading-main" class="display-5 text-center mb-5">As they say, the pen is surely mightier than a sword</p>
+    </header>
+  </div>
+
+  <!-- Line -->
+  <div class="container">
+    <hr>
+  </div>
+
+  <!-- Latest posts -->
+  <section>
+    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Latest Posts</h2>
+    <div class="container ml-2 mr-2 mb-4">
+      <div class="row">
+        {% for post in posts %}
+        <div class="card mx-auto mb-4" style="width: 18rem;">
+          <img src="{{ post.featured_image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{post.post_name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- line -->
+
+  <br>
+  <div class="container">
+    <hr>
+  </div>
+
+  <!-- Best Pens 2020  -->
+  <section>
+    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Pens of 2020</h2>
+    <div class="container ml-2 mr-2 mb-4">
+      <div class="row">
+        {% for post in best %}
+        <div class="card mx-auto mb-4" style="width: 18rem;">
+          <img src="{{post.featured_image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{post.post_name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- line -->
+
+  <br>
+  <div class="container">
+    <hr>
+  </div>
+
+  <!-- Best Premium Pens Cards -->
+  <section>
+    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Premium Pens 2020</h2>
+    <div class="container ml-2 mr-2 mb-4">
+      <div class="row">
+        {% for post in premium %}
+        <div class="card mx-auto mb-4" style="width: 18rem;">
+          <img src="{{post.featured_image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{post.post_name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Line -->
+
+  <br>
+  <div class="container">
+    <hr>
+  </div>
+
+  <!-- Best Fountain Pens Cards -->
+  <section>
+    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Fountain Pens of 2020</h2>
+    <div class="container ml-2 mr-2 mb-4">
+      <div class="row">
+        {% for post in fountains %}
+        <div class="card mx-auto mb-4" style="width: 18rem;">
+          <img src="{{post.featured_image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{post.post_name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Line -->
+
+  <br>
+  <div class="container">
+    <hr>
+  </div>
+
+  <!-- Best Quills of 2020 cards -->
+  <section>
+    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Quills of 2020</h2>
+    <div class="container ml-2 mr-2 mb-4">
+      <div class="row">
+        {% for post in quills %}
+        <div class="card mx-auto mb-4" style="width: 18rem;">
+          <img src="{{post.featured_image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{post.post_name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Line -->
+
+  <br>
+  <!-- header container div -->
+</div>
+{% endblock %}
+
+</html>
