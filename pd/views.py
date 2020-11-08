@@ -61,3 +61,22 @@ def posts(request, cat_slug_name, post_slug_name):
         context_dict['fourofour'] = 'Sorry, the page you were looking was not found'
 
     return render(request, 'post.html', context=context_dict)
+
+def about(request):
+    context_dict = {}
+    categories = Category.objects.all()
+    context_dict['categories'] = categories
+    return render(request, 'about.html', context=context_dict)
+
+def privacy(request):
+    context_dict = {}
+    categories = Category.objects.all()
+    context_dict['categories'] = categories
+    return render(request, 'privacy.html', context=context_dict)
+
+
+def contact(request):
+    context_dict = {}
+    categories = Category.objects.all()
+    context_dict['categories'] = categories
+    return render(request, 'contact.html', context=context_dict)
