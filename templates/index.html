@@ -29,7 +29,7 @@
           <img src="{{ post.featured_image.url }}" class="card-img-top" alt="This is the {{post.post_name}} card">
           <div class="card-body">
             <h5 class="card-title">{{post.post_name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">{{post.excerpt}}</p>
             <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <img src="{{post.featured_image.url}}" class="card-img-top" alt="This is the {{post.post_name}} card">
           <div class="card-body">
             <h5 class="card-title">{{post.post_name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">{{post.excerpt}}</p>
             <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
           </div>
         </div>
@@ -73,7 +73,9 @@
 
   <!-- Best Premium Pens Cards -->
   <section>
-    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Premium Pens 2020</h2>
+    <a href="{{cat_premium.slug}}" style="text-decoration: none; color: black;">
+      <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Premium Pens of 2020</h2>
+    </a>
     <div class="container ml-2 mr-2 mb-4">
       <div class="row">
         {% for post in premium %}
@@ -81,7 +83,7 @@
           <img src="{{post.featured_image.url}}" class="card-img-top" alt="This is the {{post.post_name}} card">
           <div class="card-body">
             <h5 class="card-title">{{post.post_name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">{{post.excerpt}}</p>
             <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
           </div>
         </div>
@@ -99,7 +101,9 @@
 
   <!-- Best Fountain Pens Cards -->
   <section>
-    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Fountain Pens of 2020</h2>
+    <a href="{{cat_fountain.slug}}" style="text-decoration: none; color: black;">
+      <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Fountain Pens of 2020</h2>
+    </a>
     <div class="container ml-2 mr-2 mb-4">
       <div class="row">
         {% for post in fountains %}
@@ -107,7 +111,7 @@
           <img src="{{post.featured_image.url}}" class="card-img-top" alt="This is the {{post.post_name}} card">
           <div class="card-body">
             <h5 class="card-title">{{post.post_name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">{{post.excerpt}}</p>
             <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
           </div>
         </div>
@@ -125,7 +129,9 @@
 
   <!-- Best Quills of 2020 cards -->
   <section>
-    <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Quills of 2020</h2>
+    <a href="{{cat_quill.slug}}" style="text-decoration: none; color: black;">
+      <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Best Quills of 2020</h2>
+    </a>
     <div class="container ml-2 mr-2 mb-4">
       <div class="row">
         {% for post in quills %}
@@ -133,7 +139,7 @@
           <img src="{{post.featured_image.url}}" class="card-img-top" alt="This is the {{post.post_name}} card">
           <div class="card-body">
             <h5 class="card-title">{{post.post_name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">{{post.excerpt}}</p>
             <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
           </div>
         </div>
