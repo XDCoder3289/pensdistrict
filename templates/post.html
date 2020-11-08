@@ -14,8 +14,7 @@
     <header>
       <h1 id="heading-main" class="display-3 text-center mb-1">{{post.post_name}}</h1>
       <time class="d-block display-5 text-center mb-5" datetime="{{post.date}}">{{post.date}}</time>
-      <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="" style="width: 70%;">
-
+      <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="this is the featured image of {{post.post_name}} post" style="width: 70%;">
       <!-- Table of Contents #1c2b2d -->
       <div class="card text-center mx-auto" style="width: 18rem;">
         <div class="card-header text-center" style="background-color: #1c2b2d; color: white;">
@@ -47,7 +46,7 @@
               <div id="pen-{{pen.pen_name}}" class="card-body" style="background-color: #f1f6f9">
                 <h2 id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="{{pen.amazon_link}}" target="_blank" class="btn btn-outline-primary"><span><i class="fa fa-amazon"></i></span> Buy Now <br>USD {{pen.price}}</a>
+                <a href="{{pen.amazon_link}}" target="_blank" class="btn btn-outline-primary"><span><i class="fa fa-amazon"></i></span> Buy Now <br>$ {{pen.price}}</a>
               </div>
             </div>
             <!-- Short Description -->
@@ -55,7 +54,7 @@
           </div>
         </div>
         <!-- main content -->
-        <img class="rounded mx-auto d-block mb-5" src="{{pen.pen_image.url}}" alt="" style="width: 50%">
+        <img class="rounded mx-auto d-block mb-5" src="{{pen.pen_image.url}}" alt="This is the image of {{pen.pen_name}} pen" style="width: 50%">
         <div class="container mb-5">
           <div class="container">
             <div class="container">
