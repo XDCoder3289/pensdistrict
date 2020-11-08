@@ -28,6 +28,9 @@ def index(request):
     context_dict['premium'] = posts_for_premium
     context_dict['fountains'] = posts_for_fountains
     context_dict['quills'] = posts_for_quills
+    context_dict['cat_premium'] = cat_for_premium
+    context_dict['cat_fountain'] = fountain_pens
+    context_dict['cat_quill'] = quill_pens
     return render(request, 'index.html', context=context_dict)
 
 def cat_page(request, cat_slug_name):
