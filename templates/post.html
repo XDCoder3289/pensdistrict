@@ -13,8 +13,9 @@
     <!-- Header  -->
     <header>
       <h1 id="heading-main" class="display-3 text-center mb-1">{{post.post_name}}</h1>
+      <h2 class="text-center" style="color: rgba(117, 117, 117, 1); font-size: 20px;">{{post.excerpt}}</h2>
       <time class="d-block display-5 text-center mb-5" datetime="{{post.date}}">{{post.date | date:"d F Y"}}</time>
-      <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="this is the featured image of {{post.post_name}} post" style="width: 70%;">
+      <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="this is the featured image of {{post.post_name}} post" style="width: 100%; height: auto;">
       <!-- Table of Contents #1c2b2d -->
       <div class="card text-center mx-auto" style="width: 18rem;">
         <div class="card-header text-center" style="background-color: #1c2b2d; color: white;">
@@ -46,7 +47,7 @@
               <div id="pen-{{pen.pen_name}}" class="card-body" style="background-color: #f1f6f9">
                 <h2 id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
                 <p class="card-text">{{pen.button_copy}}</p>
-                <a href="{{pen.amazon_link}}" target="_blank" class="btn btn-outline-primary"><span><i class="fa fa-amazon"></i></span> Buy Now <br>$ {{pen.price}}</a>
+                <a id="action-button" href="{{pen.amazon_link}}" target="_blank" class="btn btn-warning" style="background-color: #FF9900;"><span><i class="fa fa-amazon"></i></span> Buy Now <br>$ {{pen.price}}</a>
               </div>
             </div>
 
