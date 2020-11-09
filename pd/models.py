@@ -44,7 +44,7 @@ class PenInPost(models.Model):
     pen_name = models.CharField(max_length=128)
     post = RichTextField(blank=True, null=True)
     short_description = RichTextField(blank=True, null=True)
-    button_copy = models.CharField(blank=True, null=True)
+    button_copy = models.CharField(max_lenght=128, blank=True, null=True)
     pen_image = models.ImageField()
     amazon_link = models.URLField()
     price = models.FloatField(default=0)
