@@ -38,7 +38,7 @@ SESSION_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
 
 
-ALLOWED_HOSTS = ['pensdistrict.com']
+ALLOWED_HOSTS = ['www.pensdistrict.com']
 
 
 # Application definition
