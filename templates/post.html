@@ -13,7 +13,7 @@
     <!-- Header  -->
     <header>
       <h1 id="heading-main" class="display-3 text-center mb-1">{{post.post_name}}</h1>
-      <time class="d-block display-5 text-center mb-5" datetime="{{post.date}}">{{post.date}}</time>
+      <time class="d-block display-5 text-center mb-5" datetime="{{post.date}}">{{post.date | date:"d F Y"}}</time>
       <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="this is the featured image of {{post.post_name}} post" style="width: 70%;">
       <!-- Table of Contents #1c2b2d -->
       <div class="card text-center mx-auto" style="width: 18rem;">
