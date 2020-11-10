@@ -43,11 +43,11 @@
         <div class="container mb-4">
           <div class="container text-center">
             <!-- Call to Action -->
-            <div class="card text-center mb-5 mt-5">
-              <div id="pen-{{pen.pen_name}}" class="card-body" style="background-color: #f1f6f9">
+            <div class="card text-center mb-5 mt-5" style="border-radius: 50px; border-width: 4px; border-color: #343a40">
+              <div id="pen-{{pen.pen_name}}" class="card-body">
                 <h2 id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
                 <p class="card-text">{{pen.button_copy}}</p>
-                <a id="action-button" href="{{pen.amazon_link}}" target="_blank" class="btn btn-warning" style="background-color: #FF9900;"><span><i class="fa fa-amazon"></i></span> Buy Now <br>$ {{pen.price}}</a>
+                <a id="action-button" href="{{pen.amazon_link}}" target="_blank" class="btn btn-warning" style="background-color: #FF9900;"><span><i class="fa fa-amazon"></i></span> Buy On Amazon <br>$ {{pen.price}}</a>
               </div>
             </div>
 
