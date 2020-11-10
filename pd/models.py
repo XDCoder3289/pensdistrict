@@ -25,6 +25,7 @@ class Post(models.Model):
     featured_image = models.ImageField(blank=True)
     excerpt = models.CharField(max_length=97, blank=True, null=True)
     date = models.DateTimeField(default=now)
+    meta_description = models.CharField(max_length=200, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.post_name)
