@@ -4,11 +4,16 @@
 <html lang="en-us" dir="ltr">
 
 <head>
+  {% block title %}
+  <meta name="description" content="If you want to contact us, read this page. Sorry about not
+  providing a contact form. To prevent the hassle caused by spammers, we found this method simpler.">
+  <title>Contact Us</title>
+  {% endblock %}
 </head>
 
 <body>
   {% block body_block %}
-  <div class="container text-center mb-5 pb-5">
+  <div class="container text-center mb-5 pb-5" style="margin-bottom: 300px;">
     <header>
       <h2 id="heading-main" class="display-4 text-center mb-5">Contact Us On The Email Below</h2>
     </header>
@@ -17,6 +22,21 @@
       <em>Note: The brackets are just to prevent scams. While emailing us, you should not include them</em>
     </main>
   </div>
+  {% endblock %}
+  {% block footer %}
+  <footer id="footer" class="page-footer font-small bg-dark" style="position: fixed; left: 0; bottom: 0; width: 100%;">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a id="nav-links" class="mb-3" href="https://www.pensdistrict.com"> pensdistrict.com</a>
+      <div class="container mt-2">
+        <p class="disclaimer"><em>We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com and affiliated sites.</em></p>
+      </div>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a id="nav-links" href="/about">About</a></li>
+        <li class="list-inline-item"><a id="nav-links" href="/contact">Contact</a></li>
+        <li class="list-inline-item"><a id="nav-links" href="/privacy-policy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
   {% endblock %}
 </body>
 

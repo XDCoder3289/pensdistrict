@@ -4,6 +4,10 @@
 <html lang="en-us" dir="ltr">
 
 <head>
+  {% block title %}
+  <meta name="description" content="{{post.meta_description}}">
+  <title>{{post.post_name}}</title>
+  {% endblock %}
 </head>
 
 <body>

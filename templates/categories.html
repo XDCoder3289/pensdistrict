@@ -5,6 +5,11 @@
 <html lang="en-us" dir="ltr">
 
 <head>
+  {% block title %}
+  <meta name="description" content="Here you will find information about {{category.pen_category}}.
+  We love pens and we love to guide our readers which pen would suit them.">
+  <title>{{category.pen_category}}</title>
+  {% endblock %}
 </head>
 
 <body>
