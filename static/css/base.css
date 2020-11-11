@@ -1,5 +1,12 @@
 body {
+  font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
+}
+
+p {
+  line-height: 30px !important;
+  font-size: 17px !important;
+  font-weight: 200 !important;
 }
 
 #nav-links {
@@ -9,11 +16,6 @@ body {
 #nav-links:hover {
   text-decoration: none;
   color: #f1f6f9;
-}
-
-#jumbotron {
-  background-color: white;
-  color: black;
 }
 
 
@@ -26,6 +28,23 @@ body {
 
 #heading-main {
   font-family: 'Dancing Script', cursive;
+}
+
+
+/* Pen Image CSS */
+
+@media (max-width: 600px) {
+  #pen-image {
+    max-width: 75% !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 600px) {
+  #pen-image {
+    max-width: 75%;
+    height: auto;
+  }
 }
 
 
