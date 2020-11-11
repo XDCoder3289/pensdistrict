@@ -1,13 +1,11 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
-}
-
-p {
   line-height: 30px !important;
   font-size: 17px !important;
-  font-weight: 200 !important;
+  font-weight: 400 !important;
 }
+
 
 #nav-links {
   color: #99a8b2;
