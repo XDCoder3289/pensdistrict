@@ -70,7 +70,7 @@
           <div class="card w-75 ml-5 mt-3 m-3" style="border-width: 0;">
             <a href="/{{sidenav.category | slugify}}/{{sidenav.slug}}">
               <img src="{{sidenav.featured_image.url}}" class="card-img-top mb-1" alt="showing recommended article{{sidenav.post_name}} in the nav">
-              <p class="card-text mb-2" style="color: rgba(117, 117, 117, 1);">{{sidenav.post_name}}</p>
+              <p id="heading-main" class="card-text mb-2" style="color: black;">{{sidenav.post_name}}</p>
             </a>
           </div>
           {% endfor %}
