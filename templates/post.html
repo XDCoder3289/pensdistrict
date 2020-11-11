@@ -12,41 +12,38 @@
 
 <body>
   {% block body_block %}
-  <div class="container">
 
-    <!-- Header  -->
-    <header>
-      <h1 id="heading-main" class="display-3 text-center mb-1">{{post.post_name}}</h1>
-      <h2 class="text-center" style="color: rgba(117, 117, 117, 1); font-size: 20px;">{{post.excerpt}}</h2>
-      <time class="d-block display-5 text-center mb-5" datetime="{{post.date}}">{{post.date | date:"d F Y"}}</time>
-      <img class="rounded mx-auto d-block mb-5" src="{{post.featured_image.url}}" alt="this is the featured image of {{post.post_name}} post" style="width: 100%; height: auto;">
-      <!-- Table of Contents #1c2b2d -->
-      <div class="card text-center mx-auto" style="width: 18rem;">
-        <div class="card-header text-center" style="background-color: #1c2b2d; color: white;">
-          Table of Contents
-        </div>
-        <ul class="list-group list-group-flush">
-          {% for pen in pens %}
-          <li class="list-group-item"> <a href="#pen-{{pen.pen_name}}" style="color:black;">{{pen.pen_name}}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <br>
-
-    </header>
-
-    <!-- Line -->
+  <main>
     <div class="container">
-      <hr>
-    </div>
+      <div class="row">
+        <div class="col-md-8">
 
-    <!-- Main Section -->
-    <main>
-      {% for pen in pens %}
-      <div class="container">
-        <div class="container mb-4">
-          <div class="container text-center">
-            <!-- Call to Action -->
+          <!-- header -->
+          <header>
+            <h1 id="heading-main" class="display-4">{{post.post_name}}</h1>
+            <h2 style="font-size: 20px; color: rgba(117, 117, 117, 1);">{{post.excerpt}}</h2>
+            <time class="d-block mb-3" datetime="{{post.date}}" style="color: rgba(117, 117, 117, 1); font-size: 15px;">{{post.date | date:"d F Y"}}</time>
+            <img src="{{post.featured_image.url}}" alt="This is the feaured image of the {{post.post_name}} post." class="img-fluid mb-4">
+          </header>
+
+          <!-- Table of Contents -->
+          <div class="card mb-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table of Contents</h5>
+              <ol style="color: rgba(117, 117, 117, 1);">
+                {% for pen in pens %}
+                <li class="card-text"> <a href="#pen-{{pen.pen_name}}" style="color: rgba(117, 117, 117, 1); ">{{pen.pen_name}}</a></li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+          <hr>
+
+          <!-- Main Content -->
+          <article class="mt-5">
+            {% for pen in pens %}
+
+            <!-- CTA -->
             <div class="card text-center mb-5 mt-5" style="border-radius: 50px; border-width: 4px; border-color: #343a40">
               <div id="pen-{{pen.pen_name}}" class="card-body">
                 <h2 id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
@@ -56,25 +53,31 @@
             </div>
 
             <!-- Short Description -->
-            <p class="display-5 text-center">{{pen.short_description|safe}}</p>
-          </div>
+            {{pen.short_description|safe}}
+
+            <!-- Pen's Main Content -->
+            <img id="pen-image" class="rounded mx-auto d-block mt-4" src="{{pen.pen_image.url}}" alt="This is the image of {{pen.pen_name}} pen">
+            <div id="content" class="mb-5 mt-4">{{pen.post|safe}}</div>
+
+            {% endfor %}
+          </article>
+          <hr>
         </div>
-        <!-- main content -->
-        <img class="rounded mx-auto d-block mb-5" src="{{pen.pen_image.url}}" alt="This is the image of {{pen.pen_name}} pen" style="width: 50%">
-        <div class="container mb-5">
-          <div class="container">
-            <div class="container">
-              <p class="mb-5">{{pen.post|safe}}</p>
-            </div>
+        <!-- Side Nav Articles -->
+        <div class="col-md-4">
+          <h2 id="heading-main" class="ml-5 mt-3">Recommended</h2>
+          {% for sidenav in sidenav_posts %}
+          <div class="card w-75 ml-5 mt-3 m-3" style="border-width: 0;">
+            <a href="/{{sidenav.category | slugify}}/{{sidenav.slug}}">
+              <img src="{{sidenav.featured_image.url}}" class="card-img-top mb-1" alt="showing recommended article{{sidenav.post_name}} in the nav">
+              <p class="card-text mb-2" style="color: rgba(117, 117, 117, 1);">{{sidenav.post_name}}</p>
+            </a>
           </div>
+          {% endfor %}
         </div>
       </div>
-  </div>
-  <br>
-  {% endfor %}
-  </div>
+    </div>
   </main>
-
   {% endblock %}
 </body>
 
