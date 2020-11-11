@@ -53,10 +53,11 @@ def posts(request, cat_slug_name, post_slug_name):
         direct_post = Post.objects.get(slug=post_slug_name)
         pens_in_post = PenInPost.objects.filter(pen_is_in=direct_post)
         category = Category.objects.all()
+        side_nav_posts = Post.objects.all()[:5]
         context_dict['categories'] = category
         context_dict['post'] = direct_post
         context_dict['pens'] = pens_in_post
-        context_dict['test'] = 'test'
+        context_dict['sidenav_posts'] = side_nav_posts
     except:
         context_dict['fourofour'] = 'Sorry, the page you were looking was not found'
 
