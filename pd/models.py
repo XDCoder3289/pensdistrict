@@ -48,6 +48,7 @@ class PenInPost(models.Model):
     button_copy = models.CharField(max_length=200, blank=True, null=True)
     pen_image = models.ImageField()
     amazon_link = models.URLField()
+    rating = models.CharField(max_length=3, default=4)
     price = models.FloatField(default=0)
 
     class Meta:
