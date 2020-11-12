@@ -43,8 +43,8 @@ class Post(models.Model):
 class PenInPost(models.Model):
     pen_is_in = models.ForeignKey(Post, on_delete=models.CASCADE)
     pen_name = models.CharField(max_length=128)
-    post = RichTextField(blank=True, null=True)
     short_description = RichTextField(blank=True, null=True)
+    post = RichTextField(blank=True, null=True)
     button_copy = models.CharField(max_length=200, blank=True, null=True)
     pen_image = models.ImageField()
     amazon_link = models.URLField()
