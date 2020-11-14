@@ -25,6 +25,9 @@
             <time class="d-block mb-3" datetime="{{post.date}}" style="color: rgba(117, 117, 117, 1); font-size: 15px;">{{post.date | date:"d F Y"}}</time>
             <img src="{{post.featured_image.url}}" alt="This is the feaured image of the {{post.post_name}} post." class="img-fluid mb-4">
           </header>
+          <article class="mt-2 mb-3">
+            {{post.starting_content|safe}}
+          </article>
 
           <!-- Table of Contents -->
           <div class="card mb-4" style="width: 18rem;">
@@ -71,7 +74,7 @@
           <div class="card w-75 ml-5 mt-3 m-3" style="border-width: 0;">
             <a href="/{{sidenav.category | slugify}}/{{sidenav.slug}}">
               <img src="{{sidenav.featured_image.url}}" class="card-img-top mb-1" alt="showing recommended article{{sidenav.post_name}} in the nav">
-              <h3 id="heading-main" class="card-text mb-2" style="color: black;">{{sidenav.post_name}}</h3>
+              <h5 id="heading-main" class="card-text mb-2" style="color: black;">{{sidenav.post_name}}</h5>
             </a>
           </div>
           {% endfor %}
