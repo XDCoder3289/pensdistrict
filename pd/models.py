@@ -20,10 +20,11 @@ class Category(models.Model):
 
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
     post_name = models.CharField(max_length=128, unique=True)
     featured_image = models.ImageField(blank=True)
     excerpt = models.CharField(max_length=97, blank=True, null=True)
+    starting_content = RichTextField(default="Test")
     date = models.DateTimeField(default=now)
     meta_description = models.CharField(max_length=200, blank=True, null=True)
 
