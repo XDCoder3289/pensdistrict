@@ -29,7 +29,7 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        {% for category in categories %}
+        {% for category in category_nav %}
         <li class="nav-item mr-4">
           <a id="nav-links" href="/{{ category.slug }}">{{category.pen_category}}</a>
         </li>
