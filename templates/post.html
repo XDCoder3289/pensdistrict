@@ -14,7 +14,7 @@
   {% block body_block %}
 
   <main>
-    <div class="container">
+    <div class="container" itemscope itemtype="http://schema.org/Review">
       <div class="row">
         <div class="col-md-8">
 
@@ -22,9 +22,7 @@
           <header>
             <h1 id="heading-main" class="display-4">{{post.post_name}}</h1>
             <h2 style="font-size: 20px; color: rgba(117, 117, 117, 1);">{{post.excerpt}}</h2>
-            <div itemscope itemtype="http://schema.org/Review">
-              <time itemprop="datePublished" class="d-block mb-3" datetime="{{post.date}}" style="color: rgba(117, 117, 117, 1); font-size: 15px;">{{post.date | date:"d F Y"}}</time>
-            </div>
+            <time itemprop="datePublished" class="d-block mb-3" datetime="{{post.date}}" style="color: rgba(117, 117, 117, 1); font-size: 15px;">{{post.date | date:"d F Y"}}</time>
             <img src="{{post.featured_image.url}}" alt="This is the feaured image of the {{post.post_name}} post." class="img-fluid mb-4">
           </header>
           <article class="mt-2 mb-3">
@@ -51,20 +49,18 @@
 
             <!-- CTA -->
             <div class="card text-center mb-5 mt-5" style="border-radius: 50px; border-width: 4px; border-color: #343a40">
-              <div itemscope itemtype="http://schema.org/Review" id="pen-{{pen.pen_name}}" class="card-body">
+              <div id="pen-{{pen.pen_name}}" class="card-body">
                 <h2 itemprop="itemReviewed" id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
                 <p class="card-text">{{pen.button_copy}}</p>
-                <p itemprop="reviewRating"><strong>Our Rating: {{pen.rating}}/5</strong></p>
+                <p itemprop="reviewRating"><strong>Our Rating: <div itemprop="ratingValue">{{pen.rating}}/5</div></strong></p>
                 <a itemprop="url" id="action-button" href="{{pen.amazon_link}}" target="_blank" class="btn btn-warning" style="background-color: #FF9900;"><span><i class="fa fa-amazon"></i></span> Buy Now <br>$ {{pen.price}}</a>
               </div>
             </div>
 
             <!-- Content and Image-->
             <img id="pen-image" class="rounded mx-auto d-block mt-4 mb-4" src="{{pen.pen_image.url}}" alt="This is the image of {{pen.pen_name}} pen">
-            <div itemscope itemtype="http://schema.org/Review">
-              <div itemprop="reviewBody">
-                {{pen.post_content|safe}}
-              </div>
+            <div itemprop="reviewBody">
+              {{pen.post_content|safe}}
             </div>
 
             {% endfor %}
@@ -72,9 +68,7 @@
               {{ post.conclusion|safe }}
             </div>
           </article>
-          <div itemscope itemtype="http://schema.org/Review">
-            <p itemprop="author" id="heading-main" class="d-block mb-3">Written by {{post.author}}</p>
-          </div>
+          <p itemprop="author" id="heading-main" class="d-block mb-3">Written by {{post.author}}</p>
           <hr>
         </div>
         <!-- Side Nav Articles -->
