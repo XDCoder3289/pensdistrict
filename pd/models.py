@@ -56,4 +56,5 @@ class PenInPost(models.Model):
         verbose_name_plural = '4. Pens To Be Added'
 
     def __str__(self):
-        return self.pen_name
+        pens = self.pen_name + " | ---------- Post: " + str(self.pen_is_in)
+        return pens
