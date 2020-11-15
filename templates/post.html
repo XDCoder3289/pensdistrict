@@ -8,26 +8,6 @@
   <meta name="description" content="{{post.meta_description}}">
   <title>{{post.post_name}}</title>
   <!-- Schema Markup: Guide -->
-  <script type="application/ld+json">
-  {% for pen in pens %}
-{
-  "@context": "https://schema.org/",
-  "@type": "Review",
-  "reviewBody": "{{post.excerpt}}",
-  "itemReviewed": {
-    "@type": "Product",
-    "name": "{{pen.pen_name}}"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": {{pen.rating}},
-    "worstRating": 1,
-    "bestRating": 5,
-    "reviewAspect": "Ambiance"
-  }
-}
-  {% endfor %}
-</script>
   {% endblock %}
 </head>
 
@@ -44,6 +24,7 @@
             <h1 id="heading-main" class="display-4">{{post.post_name}}</h1>
             <h2 style="font-size: 20px; color: rgba(117, 117, 117, 1);">{{post.excerpt}}</h2>
             <time class="d-block mb-3" datetime="{{post.date}}" style="color: rgba(117, 117, 117, 1); font-size: 15px;">{{post.date | date:"d F Y"}}</time>
+
             <img src="{{post.featured_image.url}}" alt="This is the feaured image of the {{post.post_name}} post." class="img-fluid mb-4">
           </header>
           <article class="mt-2 mb-3">
@@ -83,10 +64,11 @@
             {{pen.post_content|safe}}
 
             {% endfor %}
-            <div id="conclusion" class="mt-5">
+            <div id="conclusion" class="mt-5 mb-5">
               {{ post.conclusion|safe }}
             </div>
           </article>
+          <p id="heading-main" class="d-block mb-3">Written by {{post.author}}</p>
           <hr>
         </div>
         <!-- Side Nav Articles -->
