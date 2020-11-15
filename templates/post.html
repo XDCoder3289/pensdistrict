@@ -7,6 +7,40 @@
   {% block title %}
   <meta name="description" content="{{post.meta_description}}">
   <title>{{post.post_name}}</title>
+  <!-- Guide Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "schema.org",
+  "@type": "Guide",
+  "category": "{{post.category}}",
+  "name": "{{post.post_name}}",
+  "text": "{{post.excerpt}}"
+   "hasPart": [
+     {% for pen in pens %}
+    {
+      "@type": "Recommendation",
+      "itemReviewed": {
+        "@type": "Product",
+        "name": "{{pen.pen_name}}",
+        "url": "{{pen.amazon_link}}"
+      },
+      "reviewAspect": [
+        {
+          "@type": "PropertyValue",
+          "name": "price",
+          "value": "${{pen.price}}"
+        },
+      ],
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": {{pen.rating}},
+        "bestRating": 5,
+        "worstRating": 1,
+      }
+      "reviewBody": "{{pen.post_content}}"
+    }, {% endfor %}  ]
+}
+</script>
   {% endblock %}
 </head>
 
