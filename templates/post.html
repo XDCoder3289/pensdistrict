@@ -9,38 +9,24 @@
   <title>{{post.post_name}}</title>
   <!-- Schema Markup: Guide -->
   <script type="application/ld+json">
+  {% for pen in pens %}
 {
-  "@context": "schema.org",
-  "@type": "Guide",
-  "category": "{{post.category}}",
-  "name": "{{post.post_name}}",
-  "text": "{{post.excerpt}}",
-  "hasPart": [
-     {% for pen in pens %}
-    {
-      "@type": "Recommendation",
-      "itemReviewed": {
-        "@type": "Product",
-        "name": "{{pen.pen_name}}",
-        "url": "{{pen.amazon_link}}"
-      },
-      "reviewAspect": [
-        {
-          "@type": "Easy to use for lefties",
-          "name": "price",
-          "value": "${{pen.price}}"
-        }
-      ],
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": {{pen.rating}},
-        "bestRating": 5,
-        "worstRating": 1
-      },
-      "reviewBody": "{{pen.post_content}}"
-      {% endfor %}
-    }, ]
+  "@context": "https://schema.org/",
+  "@type": "Review",
+  "reviewBody": "{{post.excerpt}}",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "{{pen.pen_name}}"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": {{pen.rating}},
+    "worstRating": 1,
+    "bestRating": 5,
+    "reviewAspect": "Ambiance"
+  }
 }
+  {% endfor %}
 </script>
   {% endblock %}
 </head>
