@@ -15,7 +15,7 @@
   "category": "{{post.category}}",
   "name": "{{post.post_name}}",
   "text": "{{post.excerpt}}",
-   "hasPart": [
+  "hasPart": [
      {% for pen in pens %}
     {
       "@type": "Recommendation",
@@ -29,16 +29,16 @@
           "@type": "PropertyValue",
           "name": "price",
           "value": "${{pen.price}}"
-        },
+        }
       ],
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": {{pen.rating}},
         "bestRating": 5,
         "worstRating": 1,
-      }
+      },
       "reviewBody": "{{pen.post_content}}"
-    }, {% endfor %}  ]
+    } {% endfor %}  ]
 }
 </script>
   {% endblock %}
