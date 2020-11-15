@@ -26,6 +26,7 @@ class Post(models.Model):
     excerpt = models.CharField(max_length=97, blank=True, null=True)
     starting_content = RichTextField(default="Write the beginning of your article here")
     conclusion = RichTextField(default="Write the ending sentences here")
+    author = models.CharField(max_length=15, default="Harris Richard")
     date = models.DateTimeField(default=now)
     meta_description = models.CharField(max_length=200, blank=True, null=True)
 
