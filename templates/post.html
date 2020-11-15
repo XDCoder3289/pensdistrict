@@ -50,7 +50,7 @@
             <!-- CTA -->
             <div class="card text-center mb-5 mt-5" style="border-radius: 50px; border-width: 4px; border-color: #343a40">
               <div id="pen-{{pen.pen_name}}" class="card-body">
-                <h2 itemprop="itemReviewed" itemscope itemtype="http://schema.org/ListItem" id="heading-main" class="display-4 text-center mb-2">
+                <h2 id="heading-main" class="display-4 text-center mb-2">
                   <div itemprop="name">{{pen.pen_name}}</div>
                 </h2>
                 <p class="card-text">{{pen.button_copy}}</p>
@@ -61,7 +61,7 @@
 
             <!-- Content and Image-->
             <img id="pen-image" class="rounded mx-auto d-block mt-4 mb-4" src="{{pen.pen_image.url}}" alt="This is the image of {{pen.pen_name}} pen">
-            <div itemprop="reviewBody">
+            <div>
               {{pen.post_content|safe}}
             </div>
 
