@@ -35,8 +35,9 @@
               <h5 class="card-title">Table of Contents</h5>
               <ol style="color: rgba(117, 117, 117, 1);">
                 {% for pen in pens %}
-                <li class="card-text"> <a href="#pen-{{pen.pen_name}}" style="color: rgba(117, 117, 117, 1); ">{{pen.pen_name}}</a></li>
+                <li class="card-text"><a href="#pen-{{pen.pen_name}}" style="color: rgba(117, 117, 117, 1);">{{pen.pen_name}}</a></li>
                 {% endfor %}
+                <li class="card-text"><a href="#conclusion" style="color: rgba(117, 117, 117, 1);">Conclusion & More</a></li>
               </ol>
             </div>
           </div>
@@ -64,6 +65,9 @@
             <div id="content" class="mb-5 mt-4">{{pen.post|safe}}</div>
 
             {% endfor %}
+            <div id="conclusion">
+              {{ post.conclusion|safe }}
+            </div>
           </article>
           <hr>
         </div>
