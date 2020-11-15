@@ -20,8 +20,8 @@ class Category(models.Model):
 
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    slug = models.SlugField(unique=True, blank=True, null=True)
     post_name = models.CharField(max_length=128, unique=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
     featured_image = models.ImageField(blank=True)
     excerpt = models.CharField(max_length=97, blank=True, null=True)
     starting_content = RichTextField(default="Write the beginning of your article here")
