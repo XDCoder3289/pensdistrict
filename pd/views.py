@@ -57,7 +57,7 @@ def posts(request, cat_slug_name, post_slug_name):
         pens_in_post = PenInPost.objects.filter(pen_is_in=direct_post)
         category = Category.objects.all()
         side_nav_posts = Post.objects.exclude(post_name=direct_post)[:5]
-        context_dict['categor_nav'] = category
+        context_dict['category_nav'] = category
         context_dict['post'] = direct_post
         context_dict['pens'] = pens_in_post
         context_dict['sidenav_posts'] = side_nav_posts
