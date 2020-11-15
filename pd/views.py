@@ -81,3 +81,7 @@ def contact(request):
     categories = Category.objects.all()
     context_dict['categories'] = categories
     return render(request, 'contact.html', context=context_dict)
+
+def sitemap(request):
+    context_dict = {}
+    return render(request, 'sitemap.xml', context=context_dict)    
