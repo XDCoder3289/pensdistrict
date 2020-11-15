@@ -50,7 +50,9 @@
             <!-- CTA -->
             <div class="card text-center mb-5 mt-5" style="border-radius: 50px; border-width: 4px; border-color: #343a40">
               <div id="pen-{{pen.pen_name}}" class="card-body">
-                <h2 itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product" id="heading-main" class="display-4 text-center mb-2">{{pen.pen_name}}</h2>
+                <h2 itemprop="itemReviewed" itemscope itemtype="http://schema.org/ListItem" id="heading-main" class="display-4 text-center mb-2">
+                  <div itemprop="name">{{pen.pen_name}}</div>
+                </h2>
                 <p class="card-text">{{pen.button_copy}}</p>
                 <p><strong>Our Rating: {{pen.rating}}/5</strong></p>
                 <a itemprop="url" id="action-button" href="{{pen.amazon_link}}" target="_blank" class="btn btn-warning" style="background-color: #FF9900;"><span><i class="fa fa-amazon"></i></span> Buy Now <br>$ {{pen.price}}</a>
