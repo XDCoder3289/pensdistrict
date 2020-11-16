@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  {% block body_block %}
+  {% if search_posts|length < 1 %}
+  <p>Your search {{query}} could not be found</p>
+  {% endif %}
+  <div class="container">
+    <section>
+      <h2 id="heading-main" class="display-4 text-center mb-5" style="font-size: 1.9rem;">Search Results</h2>
+      <div class="container ml-2 mr-2 mb-4">
+        <div class="row">
+          {% for post in search_posts %}
+          <div class="card mx-auto mb-4" style="width: 18rem;">
+            <img src="{{ post.featured_image.url }}" class="card-img-top" alt="This is the {{post.post_name}} card">
+            <div class="card-body">
+              <h5 class="card-title">{{post.post_name}}</h5>
+              <p class="card-text">{{post.excerpt}}</p>
+              <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </div>
+  {% endblock %}
+</body>
+
+</html>
