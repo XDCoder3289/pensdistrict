@@ -30,7 +30,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         {% for category in category_nav %}
-        <a id="nav-links" href="/{{ category.slug }}">{{category.pen_category}}</a>
+        <a id="nav-links" class="ml-3" href="/{{ category.slug }}">{{category.pen_category}}</a>
         </li>
         {% endfor %}
       </ul>
