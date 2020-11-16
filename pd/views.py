@@ -85,6 +85,16 @@ def contact(request):
     context_dict['category_nav'] = categories
     return render(request, 'contact.html', context=context_dict)
 
+def search(request):
+    search = request.GET['query']
+    posts = Post.objects.filter(post_name__contains=search)
+    context_dict = {}
+    categories = Category.objects.all()
+    context_dict['search_posts'] = posts
+    context_dict['category_nav'] = categories
+    context_dict['query'] = search
+    return render(request, 'search.html', context=context_dict)
+
 def sitemap(request):
     context_dict = {}
     return render(request, 'sitemap.xml', context=context_dict)
