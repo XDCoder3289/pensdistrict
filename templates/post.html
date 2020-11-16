@@ -23,7 +23,7 @@
   <meta name="twitter:data1" content="PensDistrict">
   <meta name="twitter:label2" content="Est. reading time">
   <meta name="twitter:data2" content="6 minutes">
-  <script type="application/ld+json">
+  <script type="application/ld+json" class="yoast-schema-graph">
     {
       "@context": "https://schema.org",
       "@graph": [{
@@ -32,39 +32,49 @@
         "url": "https://www.pensdistrict.com/",
         "name": "PensDistrict",
         "description": "",
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": "https://www.pensdistrict.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }],
         "inLanguage": "en-US"
       }, {
         "@type": "ImageObject",
+        "@id": "https://www.pensdistrict.com/{{post.featured_image}}/#primaryimage",
         "inLanguage": "en-US",
-        "url": "https://www.pensdistrict.com/{{post.featured_image.url}}"
+        "url": "https://www.pensdistrict.com/{{post.featured_image}}",
+        "width": 100 % ,
+        "height": auto,
       }, {
         "@type": "WebPage",
-        "@id": "https://pensdistrict.com/{{post.category}}/{{post.slug}}/#webpage",
-        "url": "https://pensdistrict.com/{{post.category}}/{{post.slug}}",
+        "@id": "https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/#webpage",
+        "url": "https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}",
         "name": "{{post.post_name}}",
         "isPartOf": {
           "@id": "https://www.pensdistrict.com/#website"
         },
         "primaryImageOfPage": {
-          "@id": "https://www.pensdistrict.com/{{post.featured_image.url}}/#main-image"
+          "@id": "https://www.pensdistrict.com/{{post.featured_image}}/#primaryimage"
         },
         "datePublished": "{{post.date}}",
         "dateModified": "{{post.date}}",
         "author": {
-          "name": "{{post.author}}"
+          "@id": "{{post.author}}",
         },
         "description": "{{post.excerpt}}",
         "inLanguage": "en-US",
         "potentialAction": [{
           "@type": "ReadAction",
-          "target": ["https://pensdistrict.com/{{post.category}}/{{post.slug}}"]
+          "target": ["https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}"]
         }]
       }, {
         "@type": "Person",
         "name": "PensDistrict",
         "image": {
           "@type": "ImageObject",
+          "@id": "https://www.pensdistrict.com/#personlogo",
           "inLanguage": "en-US",
+          "url": "https://www.pensdistrict.com/{% static 'images/pensdistrict.png' %}",
           "caption": "PensDistrict"
         }
       }]
