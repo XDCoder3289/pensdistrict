@@ -24,7 +24,7 @@
             <div class="card-body">
               <h5 class="card-title">{{post.post_name}}</h5>
               <p class="card-text">{{post.excerpt}}</p>
-              <a href="{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
+              <a href="/{{ post.category|slugify }}/{{ post.slug }}" class="btn btn-outline-dark">Read More</a>
             </div>
           </div>
           {% endfor %}
