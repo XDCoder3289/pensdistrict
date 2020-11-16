@@ -96,5 +96,7 @@ def search(request):
     return render(request, 'search.html', context=context_dict)
 
 def sitemap(request):
+    posts = Post.objects.all()
     context_dict = {}
+    context_dict['posts'] = posts
     return render(request, 'sitemap.xml', context=context_dict)
