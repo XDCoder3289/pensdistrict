@@ -23,7 +23,7 @@
   <meta name="twitter:data1" content="PensDistrict">
   <meta name="twitter:label2" content="Est. reading time">
   <meta name="twitter:data2" content="6 minutes">
-  <script type="application/ld+json" class="yoast-schema-graph">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [{
@@ -40,9 +40,9 @@
         "inLanguage": "en-US"
       }, {
         "@type": "ImageObject",
-        "@id": "https://www.pensdistrict.com/{{post.featured_image}}/#primaryimage",
+        "@id": "https://www.pensdistrict.com/{{post.featured_image.url}}/#primaryimage",
         "inLanguage": "en-US",
-        "url": "https://www.pensdistrict.com/{{post.featured_image}}",
+        "url": "https://www.pensdistrict.com/{{post.featured_image.url}}",
         "width": 600,
         "height": 400
       }, {
@@ -59,7 +59,7 @@
         "datePublished": "{{post.date}}",
         "dateModified": "{{post.date}}",
         "author": {
-          "@id": "{{post.author}}",
+          "name": "{{post.author}}"
         },
         "description": "{{post.excerpt}}",
         "inLanguage": "en-US",
