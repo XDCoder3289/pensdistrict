@@ -13,6 +13,7 @@ urlpatterns = [
     path('privacy-policy/', views.privacy, name='privacy'),
     path('contact/', views.contact, name='contact'),
     path('sitemap.xml/', views.sitemap, name='sitemap'),
+    path('search/', views.search, name='search'),
     path('<slug:cat_slug_name>/', views.cat_page, name='cat_page'),
     path('<slug:cat_slug_name>/<slug:post_slug_name>/', views.posts, name='posts'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
