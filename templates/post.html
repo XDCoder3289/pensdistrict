@@ -8,16 +8,16 @@
   <title>{{post.post_name}}</title>
   <meta name="description" content="{{post.meta_description}}">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="canonical" href="https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}" />
+  <link rel="canonical" href="https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{post.post_name}}" />
   <meta property="og:description" content="{{post.meta_description}}" />
-  <meta property="og:url" content="https://www.pensdistrict.com/{{post.category}}/{{post.slug}}" />
+  <meta property="og:url" content="https://www.pensdistrict.com/{{post.category}}/{{post.slug}}/" />
   <meta property="og:site_name" content="PensDistrict" />
   <meta property="article:published_time" content="{{post.date}}" />
   <meta property="article:modified_time" content="{{post.date}}" />
-  <meta property="og:image" content="https://www.pensdistrict.com/{{post.featured_image.url}}" />
+  <meta property="og:image" content="https://www.pensdistrict.com/{{post.featured_image.url}}/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:label1" content="Written by">
   <meta name="twitter:data1" content="PensDistrict">
@@ -28,7 +28,7 @@
       "@context": "https://schema.org",
       "@graph": [{
         "@type": "WebSite",
-        "@id": "https://www.pensdistrict.com/#website",
+        "@id": "https://www.pensdistrict.com/#website/",
         "url": "https://www.pensdistrict.com/",
         "name": "PensDistrict",
         "description": "",
@@ -40,21 +40,21 @@
         "inLanguage": "en-US"
       }, {
         "@type": "ImageObject",
-        "@id": "https://www.pensdistrict.com/{{post.featured_image.url}}/#primaryimage",
+        "@id": "https://www.pensdistrict.com/{{post.featured_image.url}}/#main-image/",
         "inLanguage": "en-US",
-        "url": "https://www.pensdistrict.com/{{post.featured_image.url}}",
+        "url": "https://www.pensdistrict.com/{{post.featured_image.url}}/",
         "width": 600,
         "height": 400
       }, {
         "@type": "WebPage",
-        "@id": "https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/#webpage",
-        "url": "https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}",
+        "@id": "https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/#webpage/",
+        "url": "https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/",
         "name": "{{post.post_name}}",
         "isPartOf": {
-          "@id": "https://www.pensdistrict.com/#website"
+          "@id": "https://www.pensdistrict.com/#website/"
         },
         "primaryImageOfPage": {
-          "@id": "https://www.pensdistrict.com/{{post.featured_image}}/#primaryimage"
+          "@id": "https://www.pensdistrict.com/{{post.featured_image}}/#main-image/"
         },
         "datePublished": "{{post.date}}",
         "dateModified": "{{post.date}}",
@@ -65,16 +65,16 @@
         "inLanguage": "en-US",
         "potentialAction": [{
           "@type": "ReadAction",
-          "target": ["https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}"]
+          "target": ["https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/"]
         }]
       }, {
         "@type": "Person",
         "name": "PensDistrict",
         "image": {
           "@type": "ImageObject",
-          "@id": "https://www.pensdistrict.com/#personlogo",
+          "@id": "https://www.pensdistrict.com/#personlogo/",
           "inLanguage": "en-US",
-          "url": "https://www.pensdistrict.com/{% static 'images/pensdistrict.png' %}",
+          "url": "https://www.pensdistrict.com/{% static 'images/pensdistrict.png' %}/",
           "caption": "PensDistrict"
         }
       }]
