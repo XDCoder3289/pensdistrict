@@ -36,13 +36,13 @@
 <priority>0.80</priority>
 </url>
 <url>
-<loc>https://www.pensdistrict.com/static/css/base.css</loc>
+<loc>https://www.pensdistrict.com/static/css/base.css/</loc>
 <lastmod>2020-11-15</lastmod>
 <priority>0.80</priority>
 </url>
 {% for post in posts %}
 <url>
-<loc>https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}</loc>
+<loc>https://www.pensdistrict.com/{{post.category|slugify}}/{{post.slug}}/</loc>
 <lastmod>2020-11-15</lastmod>
 <priority>0.80</priority>
 </url>
