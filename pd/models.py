@@ -36,7 +36,7 @@ class Post(models.Model):
 
 
     class Meta:
-        verbose_name_plural = '3. Posts'
+        verbose_name_plural = '2. Posts'
         ordering = ['-date',]
 
 
@@ -54,7 +54,7 @@ class PenInPost(models.Model):
     price = models.FloatField(default=0)
 
     class Meta:
-        verbose_name_plural = '4. Pens To Be Added'
+        verbose_name_plural = '3. Pens To Be Added'
 
     def __str__(self):
         pens = self.pen_name + " | ---------- Post: " + str(self.pen_is_in)
