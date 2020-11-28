@@ -30,10 +30,6 @@ class Post(models.Model):
     date = models.DateTimeField(default=now)
     meta_description = models.CharField(max_length=200, blank=True, null=True)
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.post_name)
-        super(Post, self).save(*args, **kwargs)
-
 
     class Meta:
         verbose_name_plural = '2. Posts'
