@@ -40,9 +40,9 @@
         "inLanguage": "en-US"
       }, {
         "@type": "ImageObject",
-        "@id": "https://www.pensdistrict.com/{{post.featured_image.url}}/#main-image/",
+        "@id": "https://www.pensdistrict.com{{post.featured_image.url}}#main-image/",
         "inLanguage": "en-US",
-        "url": "https://www.pensdistrict.com/{{post.featured_image.url}}/",
+        "url": "https://www.pensdistrict.com{{post.featured_image.url}}",
         "width": 600,
         "height": 400
       }, {
@@ -54,7 +54,7 @@
           "@id": "https://www.pensdistrict.com/#website/"
         },
         "primaryImageOfPage": {
-          "@id": "https://www.pensdistrict.com/{{post.featured_image}}/#main-image/"
+          "@id": "https://www.pensdistrict.com{{post.featured_image}}#main-image/"
         },
         "datePublished": "{{post.date}}",
         "dateModified": "{{post.date}}",
@@ -74,7 +74,7 @@
           "@type": "ImageObject",
           "@id": "https://www.pensdistrict.com/#personlogo/",
           "inLanguage": "en-US",
-          "url": "https://www.pensdistrict.com/{% static 'images/pensdistrict.png' %}/",
+          "url": "https://www.pensdistrict.com{% static 'images/pensdistrict.png' %}",
           "caption": "PensDistrict"
         }
       }]
